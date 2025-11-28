@@ -1,0 +1,216 @@
+# ==============================================
+# 1. Python 核心产物（编译文件、缓存、字节码）
+# ==============================================
+__pycache__/          # Python 3 字节码缓存目录
+*.py[cod]             # Python 2/3 编译文件（.pyc/.pyo/.pyd）
+*$py.class            # Python 2 字节码文件
+*.so                  # C 扩展编译产物
+.Python               # virtualenv 生成的标记文件
+build/                # 打包/编译输出目录（如 python setup.py build）
+develop-eggs/         # setuptools 开发模式缓存
+dist/                 # 打包输出目录（如 pip wheel、python setup.py sdist）
+downloads/            # 依赖下载缓存
+eggs/                 # .egg 格式依赖缓存
+.eggs/                # 项目内 .egg 缓存目录
+lib/                  # virtualenv 依赖库目录
+lib64/                # 64位系统 virtualenv 依赖库目录
+parts/                # setuptools 分块构建目录
+sdist/                # 源码包输出目录
+var/                  # 变量数据目录
+wheels/               # Wheel 包缓存目录（*.whl）
+*.egg-info/           # 包元信息目录
+.installed.cfg        # setuptools 安装配置文件
+*.egg                 # .egg 格式依赖文件
+
+# ==============================================
+# 2. 虚拟环境（多种工具适配）
+# ==============================================
+venv/                 # 标准 virtualenv 虚拟环境
+env/                  # 常见虚拟环境命名
+ENV/                  # 大写命名的虚拟环境（Windows 常见）
+.env/                 # 隐藏式虚拟环境
+.venv/                # 隐藏式虚拟环境（推荐规范）
+env.bak/              # 虚拟环境备份
+venv.bak/             # 虚拟环境备份
+
+# Poetry 虚拟环境（默认在项目根目录）
+.poetry/
+poetry.lock           # Poetry 依赖锁文件（可选：若团队统一依赖，可提交）
+
+# Pipenv 虚拟环境
+Pipfile.lock          # Pipenv 依赖锁文件（可选：同上）
+.env                  # Pipenv 自动生成的环境变量文件
+
+# Conda 虚拟环境
+conda-env/
+conda-meta/
+env/                  # Conda 默认虚拟环境目录
+.conda/               # Conda 本地缓存
+*.condaenv
+
+# ==============================================
+# 3. 依赖与包管理
+# ==============================================
+# Pip 依赖缓存
+pip-wheel-metadata/
+pip-delete-this-directory.txt
+__pycache__/
+*.py[cod]
+*$py.class
+
+# 本地安装的依赖（不建议提交，应通过 requirements.txt/pyproject.toml 管理）
+*.whl
+*.tar.gz
+*.zip
+
+# ==============================================
+# 4. 操作系统自动生成文件
+# ==============================================
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+*.tmp
+*.temp
+
+# macOS
+.DS_Store             # 文件夹属性文件
+.DS_Store?
+._*                   # 隐藏的资源派生文件
+.Spotlight-V100       #  Spotlight 索引
+.Trashes              # 废纸篓
+.DocumentRevisions-V100
+.fseventsd
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Linux
+*~                    # 文本编辑器备份文件
+.*.swp                # Vim 交换文件
+.*.swo                # Vim 交换文件（二次编辑）
+.nfs*                 # NFS 网络文件系统临时文件
+
+# ==============================================
+# 5. IDE/编辑器配置（按需保留，建议不提交）
+# ==============================================
+# VS Code
+.vscode/              # 包含 launch.json、settings.json 等
+*.code-workspace      # VS Code 工作区文件
+
+# PyCharm/IntelliJ
+.idea/                # 项目配置目录（包含 .iml、.ipr 等）
+*.iml
+*.iws
+*.ipr
+out/                  # 编译输出目录
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+.sublime/
+
+# Vim
+*.vim
+.*.swp
+.*.swo
+
+# Emacs
+*~
+.#*
+.DS_Store
+
+# Jupyter Notebook
+.ipynb_checkpoints/   # Notebook 检查点目录
+*.ipynb~              # Notebook 备份文件
+Untitled*.ipynb       # 未命名 Notebook
+
+# ==============================================
+# 6. 日志、缓存、临时文件
+# ==============================================
+logs/                 # 日志目录
+*.log                 # 所有日志文件
+log.txt
+debug.log
+error.log
+
+.cache/               # 缓存目录
+*.cache
+
+tmp/                  # 临时文件目录
+temp/
+*.swp
+
+# ==============================================
+# 7. 环境变量与敏感配置（核心！必忽略）
+# ==============================================
+.env                  # 环境变量文件（包含密钥、数据库地址等）
+.env.local
+.env.dev
+.env.prod
+.env.test
+.env.*.local
+
+# 敏感配置文件（根据项目调整）
+config.json
+config.yaml
+settings_local.py
+local_settings.py
+secret.py
+*.pem                 # 证书/密钥文件
+*.key
+
+# ==============================================
+# 8. 数据库文件（本地开发数据库，不提交）
+# ==============================================
+*.db                  # SQLite 数据库文件
+*.sqlite
+*.sqlite3
+db.sqlite3
+data/                 # 数据存储目录（若包含本地数据库）
+
+# ==============================================
+# 9. 框架/工具特定文件
+# ==============================================
+# Django
+*.log
+db.sqlite3-journal
+media/                # 用户上传文件目录
+static/               # 静态文件编译目录（如 collectstatic 输出）
+.env
+.venv
+
+# Flask
+instance/             # Flask 实例目录（默认隐藏，可能包含本地配置）
+.webassets-cache      # Flask-Assets 缓存
+
+# FastAPI/Starlette
+*.pid                 # 进程 ID 文件
+uvicorn.log
+
+# pytest
+.pytest_cache/        # pytest 缓存目录
+.coverage             # 测试覆盖率文件
+htmlcov/              # 覆盖率报告目录
+.coverage.*
+coverage.xml
+junit.xml
+
+# tox
+.tox/                 # tox 测试环境目录
+.tox.ini
+.tox/
+
+# celery
+celerybeat-schedule   # Celery 定时任务调度文件
+celerybeat.pid
+
+# ==============================================
+# 10. 其他杂项
+# ==============================================
+*.bak                 # 备份文件
+*.old                 # 旧文件
+*.orig                # 代码合并时的原始文件
+*.rej                 # 代码合并冲突文件
