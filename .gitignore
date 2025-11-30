@@ -102,6 +102,7 @@ $RECYCLE.BIN/
 
 # PyCharm/IntelliJ
 .idea/                # 项目配置目录（包含 .iml、.ipr 等）
+*/idea
 *.iml
 *.iws
 *.ipr
