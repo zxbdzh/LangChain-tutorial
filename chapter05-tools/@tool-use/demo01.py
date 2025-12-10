@@ -43,7 +43,7 @@ def main():
     print(f"name={add_number.description}")
     print(f"name={add_number.return_direct}")
 
-    res = add_number.invoke({"a": 10, "b": 20})
+    res = add_number.invoke({"a.txt": 10, "b": 20})
     print(res)
 
 if __name__ == "__main__":
